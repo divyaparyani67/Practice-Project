@@ -31,63 +31,63 @@
   
     self.name.schema = {
       "description": "Generates a manufacturer name.",
-      "sampleResults": ["Ford", "Jeep", "Tesla"]
+      "sampleResults": ["Langaguge", "Numeracy", "Social Science"]
     };
   
   
     /**
      * model
      *
-     * @method faker.vehicle.model
+     * @method faker.subject.level
      */
-    self.model = function () {
-      return faker.random.arrayElement(faker.definitions.vehicle.model);
+    self.level = function () {
+      return faker.random.arrayElement(faker.definitions.subject.level);
     };
   
     self.model.schema = {
-      "description": "Generates a vehicle model.",
-      "sampleResults": ["Explorer", "Camry", "Ranchero"]
+      "description": "Generates a suject level.",
+      "sampleResults": ["beginner", "intermediate", "advance"]
     };
   
     /**
      * type
      *
-     * @method faker.vehicle.type
+     * @method faker.subject.review
      */
     self.type = function () {
-      return faker.random.arrayElement(faker.definitions.vehicle.type);
+      return faker.random.arrayElement(faker.definitions.subject.review);
     };
   
     self.type.schema = {
-      "description": "Generates a vehicle type.",
-      "sampleResults": ["Coupe", "Convertable", "Sedan", "SUV"]
+      "description": "Generates a subject review.",
+      "sampleResults": ["Weekly", "fortnitly", "monthly", "quarterly"]
     };
   
     /**
-     * fuel
+     * sessions
      *
-     * @method faker.vehicle.fuel
+     * @method faker.subject.sessions
      */
     self.fuel = function () {
-      return faker.random.arrayElement(faker.definitions.vehicle.fuel);
+      return faker.random.arrayElement(faker.definitions.subject.sessions);
     };
   
     self.fuel.schema = {
-      "description": "Generates a fuel type.",
-      "sampleResults": ["Electric", "Gasoline", "Diesel"]
+      "description": "Generates a subjects sessions.",
+      "sampleResults": ["40 min", "50 min", "60 min"]
     };
   
     /**
-     * vin
+     * passing
      *
-     * @method faker.vehicle.vin
+     * @method faker.subject.passing
      */
     self.vin = function () {
       return (
         faker.random.alphaNumeric(10) +
         faker.random.alpha({ count: 1, upcase: true }) +
         faker.random.alphaNumeric(1) +
-        faker.random.number({ min: 10000, max: 100000}) // return five digit #
+        faker.random.number({ min: 35, max: 100}) // return five digit #
       ).toUpperCase();
     };
   
@@ -99,7 +99,7 @@
     /**
      * color
      *
-     * @method faker.vehicle.color
+     * @method faker.subject.code
      */
     self.color = function () {
       return fake('{{commerce.color}}');
